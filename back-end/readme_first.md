@@ -3,6 +3,9 @@
 # 환경 설정
 conda create -n zf_back python=3.12
 
+# 환경 활성화
+conda activate zf_back
+
 # 필수 설치
 pip install fastapi uvicorn "pydantic[email]"
 pip install mysql-connector-python aiomysql langchain openai

@@ -35,3 +35,16 @@ wheels/
 *.db
 log.txt
 *.log
+
+# ----------------------------------------------------------------------
+# 5. Node.js / 프론트엔드 (Node.js & Frontend)
+# ----------------------------------------------------------------------
+front-end/node_modules/          # npm 패키지 폴더
+package-lock.json      # 패키지 잠금 파일 (선택적)
+yarn.lock              # yarn 잠금 파일
+pnpm-lock.yaml         # pnpm 잠금 파일
+.npm/                  # npm 캐시
+.yarn/                 # yarn 캐시
+front-end/dist/        # Vite 빌드 결과물
+.vite/                 # Vite 캐시
+*.local                # 로컬 환경 변수

@@ -2,10 +2,9 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
 from .chatting import Chatting 
-from . import router           
+from . import router
 from .dependencies import set_chatting_service_instance 
 from .llm_engine import LlmEngine
-# 🌟 Gongo 임포트
 from .gongo import Gongo 
 
 @asynccontextmanager
