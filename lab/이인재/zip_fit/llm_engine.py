@@ -7,6 +7,8 @@ from .config import settings
 from .gongo import Gongo
 # 🌟 OpenAI 비동기 클라이언트 임포트
 from openai import AsyncOpenAI
+# 🌟 세션 관리 유틸리티 임포트
+from .session import set_session, get_session
 
 class LlmEngine:
     """
