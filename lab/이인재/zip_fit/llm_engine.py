@@ -97,14 +97,59 @@ class LlmEngine:
         # return mock_llm_response
 
 
+    # async def generate_response(self, request: ChatRequest) -> Dict[str, Any]:
+    #     """
+    #     Chatting 클래스에서 호출되는 메인 처리 메서드입니다.
+    #     """
+    #     # 1. Gongo를 통해 데이터 가져오기
+    #     prompt_text = await self._get_llm_input_text(request)
+        
+    #     # 2. LLM 호출
+    #     llm_result = await self._call_llm_api(prompt_text)
+        
+    #     return llm_result
+    
     async def generate_response(self, request: ChatRequest) -> Dict[str, Any]:
-        """
-        Chatting 클래스에서 호출되는 메인 처리 메서드입니다.
-        """
-        # 1. Gongo를 통해 데이터 가져오기
-        prompt_text = await self._get_llm_input_text(request)
         
-        # 2. LLM 호출
-        llm_result = await self._call_llm_api(prompt_text)
+        # 🆕 1. 세션 키 생성
+        session_key = f"messages_userid_{request.user_id}"
+
+        # 🆕 2. 대화 히스토리 불러오기 (파일에서 읽기)
+        history = get_session(session_key, "conversation")
         
-        return llm_result
+        if not history:
+            # 기록 없으면 초기화
+            history = [{"role": "system", "content": "당신은 zip-fit 상담원입니다. 주어진 데이터를 바탕으로 친절하게 답변하세요."}]
+
+        # 3. Gongo 데이터 조회 (기존 로직 유지하되 Mock 데이터 호출)
+        context_data = await self.gongo_service.get_contextual_data(request.user_id, request.user_input)
+
+        # 4. 이번 질문 프롬프트 구성
+        current_input = (
+            f"[참고 데이터]\n{context_data}\n\n"
+            f"[사용자 질문]: {request.user_input}"
+        )
+        
+        # 🆕 5. 히스토리에 'User' 질문 추가
+        history.append({"role": "user", "content": current_input})
+
+        try:
+            # 🔄 6. LLM 호출 (단순 질문 대신 'history' 리스트 전체 전달)
+            response = await self.openai_client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=history, 
+                temperature=0.3
+            )
+            ai_answer = response.choices[0].message.content
+            
+            # 🆕 7. 답변을 히스토리에 추가하고 파일에 저장
+            history.append({"role": "assistant", "content": ai_answer})
+            set_session(session_key, "conversation", history)
+            
+            return {
+                "llm_output": ai_answer,
+                "usage_tokens": response.usage.total_tokens
+            }
+            
+        except Exception as e:
+            return {"llm_output": f"Error: {str(e)}", "usage_tokens": 0}
