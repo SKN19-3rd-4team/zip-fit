@@ -4,6 +4,7 @@ from typing import Dict, Any
 from .chatting import Chatting 
 from .models import ChatRequest, ChatResponse
 from .dependencies import get_chatting_service
+from .session import get_all_sessions
 
 # 라우터 인스턴스
 router = APIRouter(
@@ -77,3 +78,12 @@ async def test_gongo_only(
         "gongo_raw_output": context_data,
         "context_length": len(context_data)
     }
+    
+@router.get("/debug/sessions", tags=["Debug"])
+async def debug_sessions():
+    """
+    [개발용] 현재 서버 메모리에 저장된 모든 세션 데이터를 조회합니다.
+    서버가 재시작되면 이 데이터는 사라집니다.
+    """
+    # 위에서 import 한 함수를 여기서 사용합니다.
+    return await get_all_sessions()

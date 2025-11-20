@@ -55,6 +55,9 @@ class Gongo:
         elif "추천" in query:
             vector_context = f"사용자 거주지 '{user_info['region']}' 기반 추천 공고 검색 결과..."
         
+        # 비동기 처리를 시뮬레이션하기 위해 잠시 대기합니다.
+        await asyncio.sleep(0.01)
+        
         return (
             f"--- [Gongo Data] ---\n"
             f"RDB: {rdb_context}\n"
@@ -62,9 +65,6 @@ class Gongo:
             f"--------------------"
         )
         
-        # 비동기 처리를 시뮬레이션하기 위해 잠시 대기합니다.
-        await asyncio.sleep(0.01)
-
         # 두 데이터를 결합하여 LLM에 전달할 최종 문자열을 만듭니다.
         # context_string = (
         #     "--- SYSTEM DATA START ---\n"

@@ -115,7 +115,7 @@ class LlmEngine:
         session_key = f"messages_userid_{request.user_id}"
 
         # 🆕 2. 대화 히스토리 불러오기 (파일에서 읽기)
-        history = get_session(session_key, "conversation")
+        history = await get_session(session_key, "conversation")
         
         if not history:
             # 기록 없으면 초기화
@@ -144,7 +144,7 @@ class LlmEngine:
             
             # 🆕 7. 답변을 히스토리에 추가하고 파일에 저장
             history.append({"role": "assistant", "content": ai_answer})
-            set_session(session_key, "conversation", history)
+            await set_session(session_key, "conversation", history)
             
             return {
                 "llm_output": ai_answer,
