@@ -1,26 +1,26 @@
 import asyncio
 from typing import Dict, Any, List
+import asyncio
+from typing import List, Dict, Any
+from openai import AsyncOpenAI
+from .db import DB
+from .config import settings
+
+
 
 class Gongo:
     """
     R-DB 및 Vector-DB에서 LLM 프롬프트 구성을 위한 데이터를 조회하는 클래스입니다.
     """
     def __init__(self):
-        # NOTE: 여기에 비동기 Postgre SQL 연결 풀, Vector DB 클라이언트 등이 초기화됩니다.
-        # 테스트용 가짜 데이터베이스 초기화
-        self.mock_user_db = {
-            1: {"name": "김철수", "grade": "VIP", "region": "서울"},
-            2: {"name": "이영희", "grade": "Standard", "region": "경기"},
-        }
+        # 1. DB 연결 관리자 초기화
+        self.db_manager = DB()
         
-        # 테스트용 가짜 공고 내용 vector DB
-        self.mock_vector_db = {
-            "101": "문서내용: [서울 101호 공고] 청년 매입 임대, 보증금 1000만원, 월세 15만원.",
-            "202": "문서내용: [경기 202호 공고] 신혼부부 전세 임대, 최대 2억원 지원, 이자 1.5%.",
-        }
+        # 2. OpenAI 클라이언트 (임베딩 생성용)
+        self.openai_client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
         
         print("💡 Gongo Data Engine Initialized!")
-        pass
+        
 
     async def get_contextual_data(self, user_id: int, query: str) -> str:
         """
