@@ -7,11 +7,11 @@ class DB:
     def __init__(self):
         # config.py의 설정값을 사용합니다.
         self.db_config = {
-            "host": settings.HOST,
-            "port": settings.PORT,
-            "database": settings.DATABASE,
-            "user": settings.USER,
-            "password": settings.PASSWORD
+            "host": settings.POSTGRES_HOST,
+            "port": settings.POSTGRES_PORT,
+            "database": settings.POSTGRES_DB,
+            "user": settings.POSTGRES_USER,
+            "password": settings.POSTGRES_PASSWORD
         }
 
     def get_connection(self):
@@ -26,14 +26,14 @@ class DB:
             # 2. 설정 적용 (Auto Commit)
             conn.autocommit = True 
             
-            # 3. pgvector 확장 기능 등록 (업로드해주신 코드 반영)
+            # 3. pgvector 확장 기능 등록
             register_vector(conn)
             
-            print(f"🔌 DB 연결 성공: {settings.HOST}:{settings.PORT}/{settings.DATABASE}")
+            print(f"DB 연결 성공: {settings.POSTGRES_HOST}:{settings.POSTGRES_PORT}/{settings.POSTGRES_DB}")
             
             # 4. 연결 객체 반환
             return conn
             
         except Exception as e:
-            print(f"❌ DB 연결 실패: {e}")
+            print(f"DB 연결 실패: {e}")
             raise e

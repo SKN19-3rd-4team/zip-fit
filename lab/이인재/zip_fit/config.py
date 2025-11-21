@@ -2,22 +2,24 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import Optional
 from pathlib import Path
 
-# 🌟 [핵심 수정] 이 두 줄이 반드시 클래스 정의보다 '먼저' 있어야 합니다.
+# 현재 파일(config.py)이 위치한 폴더 경로
 CURRENT_DIR = Path(__file__).parent
+# 현재 폴더의 상위 폴더
 PROJECT_ROOT = CURRENT_DIR.parent
 
 class Settings(BaseSettings):
     """
     애플리케이션 설정을 관리합니다.
     기본값이 없는 필드는 .env에 반드시 존재해야 합니다.
+    Pydantic이 자동으로 값을 읽어옵니다.
     """
     
     # 1. R-DB 설정 (필수값 - .env에 없으면 에러 발생)
-    HOST: str
-    PORT: int
-    USER: str
-    PASSWORD: str
-    DATABASE: str
+    POSTGRES_HOST: str
+    POSTGRES_PORT: int
+    POSTGRES_DB: str
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
 
     # 2. OpenAI (필수값)
     OPENAI_API_KEY: str
@@ -38,4 +40,4 @@ class Settings(BaseSettings):
 settings = Settings()
 
 # 로드 확인용
-print(f"⚙️ Config Loaded: {settings.HOST}:{settings.PORT}/{settings.DATABASE}")
+print(f"Config Loaded: {settings.POSTGRES_HOST}:{settings.POSTGRES_PORT}/{settings.POSTGRES_DB}")
