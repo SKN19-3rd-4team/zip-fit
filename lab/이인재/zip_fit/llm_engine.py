@@ -10,7 +10,10 @@ class LLMEngine:
         self.client = AsyncOpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
         self.model = OPENAI_MODEL
 
-    async def generate_answer(self, question: str, context: str, history: List[Dict[str, str]]) -> str:
+    async def generate_answer(self,
+                                question: str,
+                                context: str,
+                                history: List[Dict[str, str]]) -> str:
         """
         [Context] + [History] + [Current Question] -> Answer
         """

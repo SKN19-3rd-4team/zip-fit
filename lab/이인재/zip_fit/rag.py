@@ -9,8 +9,11 @@ class RAGEngine:
         self.search_engine = SearchEngine()
         self.llm_engine = LLMEngine()
     
-    async def retrieve(self, question: str, top_k: int = 5, use_hybrid: bool = True) -> Tuple[str, List[Dict[str, Any]]]:
-        """(기존 코드와 동일 - 생략)"""
+    async def retrieve(self,
+                        question: str,
+                        top_k: int = 5,
+                        use_hybrid: bool = True) -> Tuple[str, List[Dict[str, Any]]]:
+
         results = await self.search_engine.smart_search(question, top_k=top_k, use_hybrid=use_hybrid)
         if not results: return "", []
         
@@ -25,7 +28,12 @@ class RAGEngine:
         return "\n" + "="*80 + "\n".join(context_parts), results
     
     # user_id 파라미터 추가
-    async def query(self, user_id: int, question: str, top_k: int = 3, use_llm: bool = True, use_hybrid: bool = True) -> Dict[str, Any]:
+    async def query(self,
+                    user_id: int,
+                    question: str,
+                    top_k: int = 3,
+                    use_llm: bool = True,
+                    use_hybrid: bool = True) -> Dict[str, Any]:
         
         # 1. 검색 (Retrieve)
         context, results = await self.retrieve(question, top_k, use_hybrid)
