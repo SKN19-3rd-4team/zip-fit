@@ -875,9 +875,9 @@ OPENAI_API_KEY=sk-your-openai-api-key
 project/
 ├── .env                          # 환경 변수 (API 키)
 ├── requirements.txt              # 패키지 목록
-├── lh_rag_pipeline.py           # 메인 코드 (.py 스크립트용)
-├── lh_rag_pipeline.ipynb        # Jupyter Notebook 버전
-└── LH_RAG_Architecture.md       # 아키텍처 문서 (이 파일)
+├── rag_pipeline.py           # 메인 코드 (.py 스크립트용)
+├── rag_pipeline.ipynb        # Jupyter Notebook 버전
+└── rag_architecture.md       # 아키텍처 문서
 ```
 
 ### 9.2 함수 구조
@@ -1012,7 +1012,7 @@ project/
 | 항목 | 단일 질의 | Multi-Query |
 |------|----------|-------------|
 | 검색 질의 수 | 1개 | 4개 (원본 + 3개 변환) |
-| 후보 문서 수 | ~10개 | ~40개 → 중복 제거 후 15~25개 |
+| 후보 문서 수 | 5~10개 | 30~40개 → 중복 제거 후 15~25개 |
 | 검색 범위 | 좁음 | **넓음** |
 | API 호출 | 검색만 | 질문 변환 LLM + 검색 |
 | 처리 시간 | ~3초 | ~5초 |
