@@ -1,5 +1,12 @@
 <script setup lang="ts">
-    import { ref, nextTick } from 'vue';
+    import { ref, nextTick, onMounted } from 'vue';
+    import { v4 as uuidv4 } from 'uuid';
+
+    function generateGuidLib(): string {
+        return uuidv4();
+    }
+
+    let guid2 = "";
 
     // 메시지 타입 정의
     interface Message {
@@ -95,6 +102,7 @@
         isLoading.value = true;
 
         try {
+            // console.log(guid2);
             // API 호출
             const response = await fetch('http://127.0.0.1:8000/api/v1/chat', {
                 method: 'POST',
@@ -102,8 +110,8 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    query: query,
-                    history: [],
+                    user_id: guid2,
+                    query: query
                 }),
             });
 
@@ -143,7 +151,11 @@
             sendMessage();
         }
     }
-
+    
+    // 💡 컴포넌트가 마운트된 후 데이터 로드 함수 호출
+    onMounted(() => {
+        guid2 = generateGuidLib()
+    });
 </script>
 
 <template>
