@@ -69,6 +69,291 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 
 ## 3. 기술 스택 & 사용한 모델
 
+<table style="width:100%; border-collapse: collapse; text-align: center; border: 1px solid #ddd;">
+    <thead>
+        <tr style="background-color: #f0f0f0;">
+            <th style="width:15%; padding: 8px; border: 1px solid #ddd;">구분</th>
+            <th style="width:30%; padding: 8px; border: 1px solid #ddd;">기술/도구</th>
+            <th style="width:25%; padding: 8px; border: 1px solid #ddd;">버전/모델명</th>
+            <th style="width:30%; padding: 8px; border: 1px solid #ddd;">용도</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="border-top: 2px solid #aaa;"><td colspan="4" style="text-align: left; background-color: #e3f2fd; font-weight: bold; padding: 6px;">⚙️ Backend</td></tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/fastapi.svg" alt="FastAPI" width="20" height="20" style="vertical-align: middle;">
+                <strong>FastAPI</strong>
+            </td>
+            <td>0.121.3</td>
+            <td>RESTful API 프레임워크</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/python.svg" alt="Python" width="20" height="20" style="vertical-align: middle;">
+                <strong>Python</strong>
+            </td>
+            <td>3.12</td>
+            <td>백엔드 개발 언어</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/asyncapi.svg" alt="asyncio" width="20" height="20" style="vertical-align: middle;">
+                asyncio
+            </td>
+            <td>-</td>
+            <td>비동기 처리</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/postgresql.svg" alt="asyncpg" width="20" height="20" style="vertical-align: middle;">
+                asyncpg
+            </td>
+            <td>0.30.0</td>
+            <td>PostgreSQL 비동기 연결</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/openai.svg" alt="OpenAI" width="20" height="20" style="vertical-align: middle;">
+                OpenAI Python SDK
+            </td>
+            <td>1.57.2</td>
+            <td>OpenAI API 클라이언트</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/uvicorn.svg" alt="uvicorn" width="20" height="20" style="vertical-align: middle;">
+                uvicorn
+            </td>
+            <td>0.38.0</td>
+            <td>ASGI 서버</td>
+        </tr>
+        
+        <tr style="border-top: 2px solid #aaa;"><td colspan="4" style="text-align: left; background-color: #fce4ec; font-weight: bold; padding: 6px;">🖥️ Frontend</td></tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/vuedotjs.svg" alt="Vue" width="20" height="20" style="vertical-align: middle;">
+                <strong>Vue</strong>
+            </td>
+            <td>3.5.22</td>
+            <td>프론트엔드 프레임워크</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/vite.svg" alt="Vite" width="20" height="20" style="vertical-align: middle;">
+                <strong>Vite</strong>
+            </td>
+            <td>7.1.11</td>
+            <td>빌드 도구</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/typescript.svg" alt="TypeScript" width="20" height="20" style="vertical-align: middle;">
+                <strong>TypeScript</strong>
+            </td>
+            <td>5.9.0</td>
+            <td>타입 안전성 보장</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/pinia.svg" alt="Pinia" width="20" height="20" style="vertical-align: middle;">
+                <strong>Pinia</strong>
+            </td>
+            <td>3.0.3</td>
+            <td>상태 관리</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/vue.svg" alt="Vue Router" width="20" height="20" style="vertical-align: middle;">
+                Vue Router
+            </td>
+            <td>4.6.3</td>
+            <td>라우팅</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/nodedotjs.svg" alt="Node.js" width="20" height="20" style="vertical-align: middle;">
+                Node.js
+            </td>
+            <td>^20.19.0 \|\| >=22.12.0</td>
+            <td>런타임 환경</td>
+        </tr>
+
+        <tr style="border-top: 2px solid #aaa;"><td colspan="4" style="text-align: left; background-color: #e8f5e9; font-weight: bold; padding: 6px;">🗄️ 데이터베이스</td></tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/postgresql.svg" alt="PostgreSQL" width="20" height="20" style="vertical-align: middle;">
+                <strong>PostgreSQL</strong>
+            </td>
+            <td>-</td>
+            <td>관계형 데이터베이스</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/postgresql.svg" alt="pgvector" width="20" height="20" style="vertical-align: middle;">
+                pgvector
+            </td>
+            <td>-</td>
+            <td>벡터 확장</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/postgresql.svg" alt="asyncpg" width="20" height="20" style="vertical-align: middle;">
+                asyncpg
+            </td>
+            <td>0.30.0</td>
+            <td>비동기 DB 연결 라이브러리</td>
+        </tr>
+
+        <tr style="border-top: 2px solid #aaa;"><td colspan="4" style="text-align: left; background-color: #fffde7; font-weight: bold; padding: 6px;">🧠 AI 모델</td></tr>
+        <tr>
+            <td>임베딩</td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/huggingface.svg" alt="BAAI/bge-m3" width="20" height="20" style="vertical-align: middle;">
+                BAAI/bge-m3
+            </td>
+            <td>-</td>
+            <td>문서 및 질문 임베딩 생성 (1024차원)</td>
+        </tr>
+        <tr>
+            <td>임베딩</td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/pytorch.svg" alt="sentence-transformers" width="20" height="20" style="vertical-align: middle;">
+                sentence-transformers
+            </td>
+            <td>3.3.1</td>
+            <td>임베딩 모델 라이브러리</td>
+        </tr>
+        <tr>
+            <td>Reranker</td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/huggingface.svg" alt="Dongjin-kr/ko-reranker" width="20" height="20" style="vertical-align: middle;">
+                Dongjin-kr/ko-reranker
+            </td>
+            <td>-</td>
+            <td>검색 결과 재순위화 (Cross-Encoder)</td>
+        </tr>
+        <tr>
+            <td>LLM</td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/openai.svg" alt="GPT-4o-mini" width="20" height="20" style="vertical-align: middle;">
+                GPT-4o-mini
+            </td>
+            <td>OpenAI</td>
+            <td>질문 재구성, 답변 생성, 맥락 분석</td>
+        </tr>
+
+        <tr style="border-top: 2px solid #aaa;"><td colspan="4" style="text-align: left; background-color: #ffe0b2; font-weight: bold; padding: 6px;">🧹 데이터 처리</td></tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/pdf.svg" alt="pymupdf4llm" width="20" height="20" style="vertical-align: middle;">
+                pymupdf4llm
+            </td>
+            <td>0.0.17</td>
+            <td>PDF 텍스트 추출</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/langchain.svg" alt="langchain-text-splitters" width="20" height="20" style="vertical-align: middle;">
+                langchain-text-splitters
+            </td>
+            <td>0.3.2</td>
+            <td>텍스트 청킹</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/html5.svg" alt="requests" width="20" height="20" style="vertical-align: middle;">
+                requests
+            </td>
+            <td>-</td>
+            <td>HTTP 요청</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/html5.svg" alt="BeautifulSoup4" width="20" height="20" style="vertical-align: middle;">
+                BeautifulSoup4
+            </td>
+            <td>-</td>
+            <td>HTML 파싱</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/pandas.svg" alt="pandas" width="20" height="20" style="vertical-align: middle;">
+                pandas
+            </td>
+            <td>2.2.3</td>
+            <td>데이터 분석 및 처리</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/pytorch.svg" alt="torch" width="20" height="20" style="vertical-align: middle;">
+                torch
+            </td>
+            <td>>=2.6.0</td>
+            <td>딥러닝 프레임워크</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/numpy.svg" alt="numpy" width="20" height="20" style="vertical-align: middle;">
+                numpy
+            </td>
+            <td>>=1.24.0</td>
+            <td>수치 연산 라이브러리</td>
+        </tr>
+
+        <tr style="border-top: 2px solid #aaa;"><td colspan="4" style="text-align: left; background-color: #f3e5f5; font-weight: bold; padding: 6px;">🛠️ 개발 환경</td></tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/docker.svg" alt="Docker" width="20" height="20" style="vertical-align: middle;">
+                <strong>Docker</strong>
+            </td>
+            <td>-</td>
+            <td>컨테이너화 및 배포</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/anaconda.svg" alt="pip/conda" width="20" height="20" style="vertical-align: middle;">
+                pip/conda
+            </td>
+            <td>-</td>
+            <td>패키지 관리</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left; padding: 6px;">
+                <img src="https://simpleicons.org/icons/python.svg" alt="python-dotenv" width="20" height="20" style="vertical-align: middle;">
+                python-dotenv
+            </td>
+            <td>1.0.1</td>
+            <td>환경 변수 관리</td>
+        </tr>
+    </tbody>
+</table>
+
 | 구분 | 기술/도구 | 버전/모델명 | 용도 |
 |------|----------|------------|------|
 | **Backend** | | | |
