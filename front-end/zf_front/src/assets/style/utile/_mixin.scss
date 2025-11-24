@@ -1,0 +1,101 @@
+@use "./variables" as *;
+@use "sass:list";
+
+@mixin flex($direction: row, $flex: none, $x: initial, $y: initial) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+  flex-direction: $direction;
+  @content;
+}
+@mixin flexColumn {
+  @include flex($direction: column);
+  @content;
+}
+@mixin flexBetween {
+  @include flex($x: space-between, $y: center);
+  @content;
+}
+@mixin flexAround {
+  @include flex($x: space-around, $y: center);
+  @content;
+}
+@mixin flexYCenter {
+  @include flex($x: flex-start, $y: center);
+  @content;
+}
+@mixin flexXCenter {
+  @include flex($x: center, $y: flex-start);
+  @content;
+}
+@mixin flexCenter {
+  @include flex($x: center, $y: center);
+  @content;
+}
+@mixin layoutBetween {
+  @include flexBetween;
+
+  & > div {
+    @include flexYCenter;
+  }
+}
+
+@mixin bgi($img, $bgp: 0 0, $size: contain, $active: false, $file: ".png") {
+  background-repeat: no-repeat;
+  background-size: $size;
+  background-position: $bgp;
+  image-rendering: -webkit-optimize-contrast;
+
+  @if $active {
+    background-image: url($imgurl + $img + $file);
+
+    &.active {
+      background-image: url($imgurl + $img + "_on" + $file);
+    }
+  } @else {
+    background-image: url($imgurl + $img);
+  }
+}
+
+@mixin mask($img, $bgp: 0 0, $size: contain) {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: $size;
+  -webkit-mask-image: url($imgurl + $img);
+  -webkit-mask-position: $bgp;
+}
+
+// ellipsis
+@mixin ellipsis($line: 1) {
+  @if ($line == 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    white-space: initial;
+  }
+  word-break: break-all;
+}
+// hidden
+@mixin hidden {
+  text-indent: -9999em;
+  overflow: hidden;
+}
+
+$rootFontSize: 16;
+@function rem($values) {
+  $result: ();
+  @each $value in $values {
+    $result: list.append($result, calc($value / $rootFontSize * 1rem));
+  }
+  @return $result;
+}
+
+@mixin outline {
+  outline: rem(2) dashed var(--primary30) !important;
+  outline-offset: rem(2);
+}

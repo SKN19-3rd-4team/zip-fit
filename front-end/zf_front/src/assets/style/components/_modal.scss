@@ -1,0 +1,79 @@
+@use "../utile/" as *;
+
+.modal-overlay {
+  @include flexColumn;
+  transition: 0.2s;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  opacity: 0;
+  overflow: hidden;
+
+  &.black {
+    background-color: var(--black);
+  }
+
+  &.absolute {
+    position: absolute;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+  }
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+
+    .modal-bottom {
+      transform: translateY(0);
+    }
+  }
+
+  .modal-wrap {
+    margin: auto;
+    min-width: rem(1200);
+    padding: rem(24 24 16 24);
+    background-color: var(--white);
+    border-radius: rem(24);
+    text-align: center;
+
+    .modal-header {
+      @include flexBetween;
+      padding-bottom: rem(14);
+
+      .title {
+        font-size: rem(24);
+        font-weight: 600;
+      }
+    }
+
+    .modal-body {
+      max-height: rem(700);
+      overflow: auto;
+    }
+
+    .modal-footer {
+      @include flex {
+        justify-content: flex-end;
+        gap: rem(12);
+      }
+      padding-top: rem(14);
+    }
+
+    .cont {
+      @include flexColumn {
+        gap: rem(var(--spacing-5));
+      }
+      margin-bottom: rem(32);
+    }
+    .txt {
+      font-size: rem(18);
+      font-weight: 700;
+      word-break: keep-all;
+    }
+  }
+}

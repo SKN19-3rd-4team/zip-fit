@@ -1,0 +1,8 @@
+@use "../utile/" as *;
+
+.com-header-wrap {
+  @include flexYCenter;
+  border-bottom: rem(1) solid var(--gray300);
+  height: rem(var(--headerHeight));
+  padding: rem(6 28);
+}

@@ -1,0 +1,444 @@
+// image url
+$imgurl: "/assets/images/";
+
+// unit
+$headerHeight: 78;
+$lnbWidth: 220;
+
+// font-weight
+$fw400: 400;
+$fw500: 500;
+$fw600: 600;
+$fw700: 700;
+$fw800: 800;
+$fontWeight: (
+  "regular": $fw400,
+  "medium": $fw500,
+  "semibold": $fw600,
+  "bold": $fw700,
+  "extrabold": $fw800,
+);
+
+// ---------- FONTSIZE ----------
+// 폰트 사이즈 변수 (px -> rem 변환)
+$fz100: 0.625rem; // 10px
+$fz200: 0.75rem; // 12px
+$fz300: 0.875rem; // 14px
+$fz400: 1rem; // 16px (기본)
+$fz500: 1.125rem; // 18px
+$fz600: 1.25rem; // 20px
+$fz700: 1.5rem; // 24px
+$fz800: 1.75rem; // 28px
+$fz900: 2rem; // 32px
+$fz1000: 2.25rem; // 36px
+$fz1100: 2.625rem; // 42px
+$fz1200: 3.5rem; // 56px
+
+$typography: (
+  "h1": (
+    size: $fz1200,
+    weight: $fw800,
+    line-height: 80px,
+  ),
+  "h2": (
+    size: $fz1100,
+    weight: $fw800,
+    line-height: 64px,
+  ),
+  "h3": (
+    size: $fz1000,
+    weight: $fw700,
+    line-height: 48px,
+  ),
+  "h4": (
+    size: $fz700,
+    weight: $fw700,
+    line-height: 36px,
+  ),
+  "h5": (
+    size: $fz600,
+    weight: $fw700,
+    line-height: 30px,
+  ),
+  "h6": (
+    size: $fz500,
+    weight: $fw600,
+    line-height: 28px,
+  ),
+  "subtitle1": (
+    size: $fz400,
+    weight: $fw600,
+    line-height: 24px,
+  ),
+  "subtitle2": (
+    size: $fz300,
+    weight: $fw600,
+    line-height: 22px,
+  ),
+  "subtitle3": (
+    size: $fz200,
+    weight: $fw600,
+    line-height: 18px,
+  ),
+  "body1": (
+    size: $fz400,
+    weight: $fw400,
+    line-height: 24px,
+  ),
+  "body2": (
+    size: $fz300,
+    weight: $fw400,
+    line-height: 22px,
+  ),
+  "body3": (
+    size: $fz200,
+    weight: $fw400,
+    line-height: 18px,
+  ),
+  "category": (
+    size: $fz500,
+    weight: $fw700,
+    line-height: 18px,
+  ),
+  "text": (
+    size: $fz400,
+    weight: $fw500,
+    line-height: 18px,
+  ),
+  "caption": (
+    size: $fz400,
+    weight: $fw400,
+    line-height: 16px,
+  ),
+  "overline": (
+    size: $fz400,
+    weight: $fw400,
+    line-height: 18px,
+  ),
+);
+
+// ---------- COLORS ----------
+// 주요 색상을 변수로 정의
+$primary: #5bb489;
+$primary30: rgba(0, 120, 122, 0.3);
+$primary10: rgba(0, 120, 122, 0.1);
+$primaryFocus: #04a0a0;
+
+$pageBg: #7bb494;
+
+$gray50: #f9fafb;
+$gray100: #f3f4f6;
+$gray200: #e5e7eb;
+$gray300: #d1d5db;
+$gray400: #9ca3af;
+$gray500: #6b7280;
+$gray600: #4b5563;
+$gray700: #374151;
+$gray800: #1f2937;
+$gray900: #111827;
+
+$white: #ffffff;
+$black: #000000;
+
+$red50: #fef2f2;
+$red100: #fee2e2;
+$red200: #fecaca;
+$red300: #fca5a5;
+$red400: #f87171;
+$red500: #ef4444;
+$red600: #dc2626;
+$red700: #b91c1c;
+$red800: #991b1b;
+$red900: #7f1d1d;
+
+$orange50: #fff7ed;
+$orange100: #ffedd5;
+$orange200: #fed7aa;
+$orange300: #fdba74;
+$orange400: #fb923c;
+$orange500: #f97316;
+$orange600: #ea580c;
+$orange700: #c2410c;
+$orange800: #9a3412;
+$orange900: #7c2d12;
+
+$blue50: #eff6ff;
+$blue100: #dbeafe;
+$blue200: #bfdbfe;
+$blue300: #93c5fd;
+$blue400: #60a5fa;
+$blue500: #3b82f6;
+$blue600: #2563eb;
+$blue700: #1d4ed8;
+$blue800: #1e40af;
+$blue900: #1e3a8a;
+
+$violet50: #f5f3ff;
+$violet100: #ede9fe;
+$violet200: #ddd6fe;
+$violet300: #c4b5fd;
+$violet400: #a78bfa;
+$violet500: #8b5cf6;
+$violet600: #7c3aed;
+$violet700: #6d28d9;
+$violet800: #5b21b6;
+$violet900: #4c1d95;
+
+$green50: #eaf6ec;
+$green100: #d8eedd;
+$green200: #a9dab4;
+$green300: #7ec88e;
+$green400: #3fa654;
+$green500: #228738;
+$green600: #267337;
+$green700: #285d33;
+$green800: #1f4727;
+$green900: #122b18;
+
+$yellow50: #fefce8;
+$yellow400: #facc15;
+$yellow700: #a16207;
+
+// text
+$basic: $gray800;
+$sub: $gray600;
+$helpText: $gray500;
+$placeholder: $gray400;
+
+$fontSize: (
+  "fz100": $fz100,
+  "fz200": $fz200,
+  "fz300": $fz300,
+  "fz400": $fz400,
+  "fz500": $fz500,
+  "fz600": $fz600,
+  "fz700": $fz700,
+  "fz800": $fz800,
+  "fz900": $fz900,
+  "fz1000": $fz1000,
+  "fz1100": $fz1100,
+  "fz1200": $fz1200,
+);
+
+$colors: (
+  "primary": $primary,
+  "primary10": $primary10,
+  "primary30": $primary30,
+  "primaryFocus": $primaryFocus,
+
+  "pageBg": $pageBg,
+
+  "gray50": $gray50,
+  "gray100": $gray100,
+  "gray200": $gray200,
+  "gray300": $gray300,
+  "gray400": $gray400,
+  "gray500": $gray500,
+  "gray600": $gray600,
+  "gray700": $gray700,
+  "gray800": $gray800,
+  "gray900": $gray900,
+
+  "white": $white,
+  "black": $black,
+
+  "red50": $red50,
+  "red100": $red100,
+  "red200": $red200,
+  "red300": $red300,
+  "red400": $red400,
+  "red500": $red500,
+  "red600": $red600,
+  "red700": $red700,
+  "red800": $red800,
+  "red900": $red900,
+
+  "orange50": $orange50,
+  "orange100": $orange100,
+  "orange200": $orange200,
+  "orange300": $orange300,
+  "orange400": $orange400,
+  "orange500": $orange500,
+  "orange600": $orange600,
+  "orange700": $orange700,
+  "orange800": $orange800,
+  "orange900": $orange900,
+
+  "blue50": $blue50,
+  "blue100": $blue100,
+  "blue200": $blue200,
+  "blue300": $blue300,
+  "blue400": $blue400,
+  "blue500": $blue500,
+  "blue600": $blue600,
+  "blue700": $blue700,
+  "blue800": $blue800,
+  "blue900": $blue900,
+
+  "violet50": $violet50,
+  "violet100": $violet100,
+  "violet200": $violet200,
+  "violet300": $violet300,
+  "violet400": $violet400,
+  "violet500": $violet500,
+  "violet600": $violet600,
+  "violet700": $violet700,
+  "violet800": $violet800,
+  "violet900": $violet900,
+
+  "green50": $green50,
+  "green100": $green100,
+  "green200": $green200,
+  "green300": $green300,
+  "green400": $green400,
+  "green500": $green500,
+  "green600": $green600,
+  "green700": $green700,
+  "green800": $green800,
+  "green900": $green900,
+
+  "yellow50": $yellow50,
+  "yellow400": $yellow400,
+  "yellow700": $yellow700,
+
+  "basic": $gray800,
+  "sub": $gray600,
+  "helpText": $gray500,
+  "placeholder": $gray400,
+);
+
+// ---------- SHADOWS ----------
+$shadow100: 0px 1px 1px 0px #1b1b1b;
+$shadow200: 0px 1px 3px 0px #1b1b1b;
+$shadow300: 0px 4px 5px -1px #1b1b1b;
+$shadow400: 0px 6px 7px -2px #1b1b1b;
+$shadow500: 0px 8px 11px -3px #1b1b1b;
+$shadow600: 0px 12px 19px -5px #1b1b1b;
+$shadow700: 0px 24px 24px -16px #1b1b1b;
+$shadow800: 0px 12px 24px -5px #1b1b1b;
+
+// ---------- BORDERRADIUS  ----------
+$boxr6: 6px;
+$boxr12: 12px;
+$boxr16: 16px;
+$boxr20: 20px;
+
+@each $semantic, $color in $colors {
+  .txt-#{$semantic} {
+    color: $color;
+  }
+
+  .bgc-#{$semantic} {
+    background-color: $color;
+  }
+}
+
+@each $semantic, $size in $fontSize {
+  .size-#{$semantic} {
+    font-size: $size;
+  }
+}
+
+:root {
+  // unit
+  --headerHeight: #{$headerHeight};
+  --lnbWidth: #{$lnbWidth};
+
+  // size
+  --fz100: #{$fz100};
+  --fz200: #{$fz200};
+  --fz300: #{$fz300};
+  --fz400: #{$fz400};
+  --fz500: #{$fz500};
+  --fz600: #{$fz600};
+  --fz700: #{$fz700};
+  --fz800: #{$fz800};
+  --fz900: #{$fz900};
+  --fz1000: #{$fz1000};
+  --fz1100: #{$fz1100};
+  --fz1200: #{$fz1200};
+
+  --white: #{$white};
+  --black: #{$black};
+  --primary: #{$primary};
+  --primary10: #{$primary10};
+  --primary30: #{$primary30};
+  --primaryFocus: #{$primaryFocus};
+
+  --pageBg: #{$pageBg};
+
+  --gray50: #{$gray50};
+  --gray100: #{$gray100};
+  --gray200: #{$gray200};
+  --gray300: #{$gray300};
+  --gray400: #{$gray400};
+  --gray500: #{$gray500};
+  --gray600: #{$gray600};
+  --gray700: #{$gray700};
+  --gray800: #{$gray800};
+  --gray900: #{$gray900};
+
+  --red50: #{$red50};
+  --red100: #{$red100};
+  --red200: #{$red200};
+  --red300: #{$red300};
+  --red400: #{$red400};
+  --red500: #{$red500};
+  --red600: #{$red600};
+  --red700: #{$red700};
+  --red800: #{$red800};
+  --red900: #{$red900};
+
+  --orange50: #{$orange50};
+  --orange100: #{$orange100};
+  --orange200: #{$orange200};
+  --orange300: #{$orange300};
+  --orange400: #{$orange400};
+  --orange500: #{$orange500};
+  --orange600: #{$orange600};
+  --orange700: #{$orange700};
+  --orange800: #{$orange800};
+  --orange900: #{$orange900};
+
+  --blue50: #{$blue50};
+  --blue100: #{$blue100};
+  --blue200: #{$blue200};
+  --blue300: #{$blue300};
+  --blue400: #{$blue400};
+  --blue500: #{$blue500};
+  --blue600: #{$blue600};
+  --blue700: #{$blue700};
+  --blue800: #{$blue800};
+  --blue900: #{$blue900};
+
+  --violet50: #{$violet50};
+  --violet100: #{$violet100};
+  --violet200: #{$violet200};
+  --violet300: #{$violet300};
+  --violet400: #{$violet400};
+  --violet500: #{$violet500};
+  --violet600: #{$violet600};
+  --violet700: #{$violet700};
+  --violet800: #{$violet800};
+  --violet900: #{$violet900};
+
+  --green50: #{$green50};
+  --green100: #{$green100};
+  --green200: #{$green200};
+  --green300: #{$green300};
+  --green400: #{$green400};
+  --green500: #{$green500};
+  --green600: #{$green600};
+  --green700: #{$green700};
+  --green800: #{$green800};
+  --green900: #{$green900};
+
+  --yellow50: #{$yellow50};
+  --yellow400: #{$yellow400};
+  --yellow700: #{$yellow700};
+
+  --basic: #{$gray800};
+  --sub: #{$gray600};
+  --helpText: #{$gray500};
+  --placeholder: #{$gray400};
+}

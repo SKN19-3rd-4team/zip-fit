@@ -1,0 +1,38 @@
+@use "../utile/" as *;
+
+.com-nav-wrap {
+  @include flexColumn;
+  width: rem(var(--lnbWidth));
+
+  .ui-logo {
+    height: rem(var(--headerHeight));
+    border-bottom: rem(1) solid var(--gray300);
+  }
+  .inner {
+    flex: 1;
+    height: 100%;
+    overflow-x: clip;
+    overflow-y: auto;
+    padding: rem(16);
+
+    & > ul {
+      @include flexColumn {
+        gap: rem(12);
+      }
+    }
+  }
+
+  .select {
+    padding: rem(16);
+
+    .ui-select {
+      width: 100%;
+    }
+  }
+
+  nav {
+    .ui-btn {
+      width: 100%;
+    }
+  }
+}

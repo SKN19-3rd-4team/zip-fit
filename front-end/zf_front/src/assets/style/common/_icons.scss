@@ -1,0 +1,67 @@
+@use "../utile/" as *;
+
+$icons: "home", "frame";
+
+[class*="icons-"] {
+  display: inline-block;
+  width: rem(24);
+  height: rem(24);
+
+  &.small {
+    width: rem(16);
+    height: rem(16);
+  }
+  &.xsmall {
+    width: rem(12);
+    height: rem(12);
+  }
+  &.rotate {
+    transform: rotate(180deg);
+  }
+
+  &.icons {
+    @each $item in $icons {
+      &-#{$item} {
+        &:not(.bgi, .img) {
+          @include mask("icons/images/#{$item}.svg", center center);
+
+          &:not([class*="bgc-"]) {
+            background-color: currentColor;
+
+            &.hover {
+              &:hover {
+                background-color: var(--primaryFocus);
+              }
+            }
+
+            &.active {
+              background-color: var(--primaryFocus);
+            }
+          }
+        }
+
+        &.auto {
+          -webkit-mask-size: auto;
+        }
+
+        &.bgi {
+          @include bgi("icon/#{$item}.svg");
+        }
+
+        &.img {
+          @include bgi("icon/#{$item}.png");
+          background-position: center center;
+        }
+      }
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    &-logo {
+    }
+  }
+}
