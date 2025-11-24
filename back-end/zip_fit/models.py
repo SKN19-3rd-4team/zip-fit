@@ -11,11 +11,14 @@ class ChatRequest(BaseModel):
 
 class SourceInfo(BaseModel):
     # [수정됨] int -> str (DB에 'LH_lease_64' 같은 문자열 ID가 들어있기 때문)
-    announcement_id: str 
-    title: str
+    announcement_id: str
+    announcement_title: str
+    announcement_date: Optional[str] = None
     region: str
-    score: float
-    chunk_count: int
+    notice_type: str
+    category: str
+    rerank_score: float
+    num_chunks: int
 
 class ChatResponse(BaseModel):
     query: str
