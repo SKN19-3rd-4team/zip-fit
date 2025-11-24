@@ -2,11 +2,14 @@ from fastapi import APIRouter, HTTPException
 import asyncpg
 from typing import Dict, List, Any
 from dependencies import get_db_config
-from models import StatsResponse 
+from models import StatsResponse
 import gongo
 
 # 라우터 객체 생성
 router = APIRouter()
+
+# [핵심] 공유 세션 저장소
+# router.py에서 'from info import user_sessions'로 가져가서 사용합니다.
 user_sessions: Dict[str, List[Dict]] = {}
 
 # 1. 통계 정보 조회 API
@@ -14,7 +17,6 @@ user_sessions: Dict[str, List[Dict]] = {}
 async def get_dashboard_stats():
     """
     공고 상태별 통계 정보를 반환합니다.
-    (전체, 공고중, 접수중, 그 외)
     """
     db_config = get_db_config()
     conn = await asyncpg.connect(**db_config)
@@ -49,7 +51,7 @@ async def get_dashboard_stats():
 async def get_active_sessions():
     """
     현재 메모리에 저장된 모든 유저의 대화 세션을 확인합니다.
-    http://localhost:8000/api/v1/sessions 로 접속하여 확인
+    URL: /api/v1/sessions
     """
     return {
         "active_user_count": len(user_sessions),
@@ -62,7 +64,7 @@ async def get_active_sessions():
 async def get_chat_logs(limit: int = 20):
     """
     DB에 저장된 대화 로그를 최신순으로 조회합니다.
-    (gongo.py에 get_chat_logs 함수가 구현되어 있어야 작동)
+    URL: /api/v1/logs
     """
     try:
         if hasattr(gongo, 'get_chat_logs'):

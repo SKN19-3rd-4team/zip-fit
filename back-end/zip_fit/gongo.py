@@ -55,7 +55,7 @@ async def vector_search(query: str, top_k: int = 15, filters: dict = None, filte
         await conn.close()
 
 
-# 키워드 검색 (Keyword Search)
+# 2. 키워드 검색 (Keyword Search)
 async def keyword_search(keywords: List[str], top_k: int = 10, filters: dict = None, filter_ids: List[str] = None) -> List[Dict]:
     """
     정확한 단어 매칭을 위한 LIKE 검색을 수행합니다.
@@ -106,7 +106,7 @@ async def keyword_search(keywords: List[str], top_k: int = 10, filters: dict = N
         await conn.close()
 
 
-# 하이브리드 검색 (Hybrid Search)
+# 3. 하이브리드 검색 (Hybrid Search)
 async def multi_query_hybrid_search(
     query_analysis: Dict,
     multi_queries: List[str],
@@ -124,7 +124,6 @@ async def multi_query_hybrid_search(
         context = query_analysis['context_analysis']
         if context.get('is_followup') and context.get('referenced_announcement_ids'):
             filter_ids = context['referenced_announcement_ids']
-    
     
     tasks = []
     for q in multi_queries:
@@ -177,6 +176,7 @@ def rerank_results(query: str, search_results: List[Dict], top_k: int = 8) -> Li
         return search_results[:top_k]
 
 
+# 5. 청크 병합 (Merge Chunks)
 async def merge_chunks(chunks: List[Dict]) -> List[Dict]:
     if not chunks:
         return []
@@ -215,7 +215,7 @@ async def merge_chunks(chunks: List[Dict]) -> List[Dict]:
     merged_results.sort(key=lambda x: x['rerank_score'], reverse=True)
     return merged_results
 
-# 컨텍스트 구성 (Context Builder)
+# 6. 컨텍스트 구성 (Context Builder)
 def build_context(merged_results: List[Dict]) -> str:
     if not merged_results:
         return "검색된 관련 정보가 없습니다."
@@ -225,6 +225,7 @@ def build_context(merged_results: List[Dict]) -> str:
         category_name = "임대" if result['category'] == 'lease' else "분양"
         url = result.get('announcement_url', '')
 
+        # status 정보도 LLM 프롬프트에 포함
         context_parts.append(f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 문서 {i}: {result['announcement_title']}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -233,10 +234,57 @@ def build_context(merged_results: List[Dict]) -> str:
 - 분류: {category_name}
 - 지역: {result['region']}
 - 유형: {result['notice_type'] or 'N/A'}
-- 관련도: {result['rerank_score']:.3f}
+- 상태: {result['announcement_status'] or '알수없음'}
 - 공고 URL: {url if url else 'URL 정보 없음'}
+- 관련도: {result['rerank_score']:.3f}
 
 [문서 내용]
 {result['merged_content']}""")
     
     return '\n\n'.join(context_parts)
+
+
+# 7. DB 로그 관리 함수 (info.py에서 호출)
+async def save_chat_log(user_id: str, query: str, answer: str, sources: List[Dict]):
+    """
+    대화 내용을 DB에 저장합니다.
+    """
+    conn = await asyncpg.connect(**get_db_config())
+    try:
+        # sources는 JSONB 형태로 저장
+        await conn.execute("""
+            INSERT INTO chat_logs (user_id, query, answer, sources)
+            VALUES ($1, $2, $3, $4)
+        """, user_id, query, answer, json.dumps(sources, ensure_ascii=False))
+    except Exception as e:
+        print(f"[Warning] 로그 저장 실패 (테이블 없음 등): {e}")
+    finally:
+        await conn.close()
+
+async def get_chat_logs(limit: int = 50):
+    """
+    저장된 대화 로그를 조회합니다.
+    """
+    conn = await asyncpg.connect(**get_db_config())
+    try:
+        rows = await conn.fetch("""
+            SELECT id, user_id, query, answer, sources, created_at
+            FROM chat_logs
+            ORDER BY created_at DESC
+            LIMIT $1
+        """, limit)
+        results = []
+        for row in rows:
+            r = dict(row)
+            # JSON string을 파이썬 객체로 변환
+            if isinstance(r['sources'], str):
+                r['sources'] = json.loads(r['sources'])
+            # datetime을 문자열로 변환
+            r['created_at'] = r['created_at'].isoformat()
+            results.append(r)
+        return results
+    except Exception as e:
+        print(f"[Warning] 로그 조회 실패: {e}")
+        return []
+    finally:
+        await conn.close()
