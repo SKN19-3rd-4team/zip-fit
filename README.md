@@ -113,7 +113,7 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 
 자세한 내용은 [시스템 아키텍처 문서](./docs/03_시스템_아키텍처.md)를 참조하세요.
 
-(추후 Miro를 활용하여 별도 작성 예정)
+![SKN_3차_ZIPFIT - 시스템 아키텍쳐](https://github.com/user-attachments/assets/1ed6adc5-8768-4542-baa0-12764dfc3bd4)
 
 ---
 
