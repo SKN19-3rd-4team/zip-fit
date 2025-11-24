@@ -119,8 +119,120 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 
 ## 5. WBS
 
-
-<img width="1102" height="991" alt="wbs" src="https://github.com/user-attachments/assets/3cf98fe2-d43f-469b-a657-c72ebf0b0bc7" />
+<table style="width:100%; border-collapse: collapse; text-align: center;">
+    <thead>
+        <tr>
+            <th style="width:10%; padding: 8px; border-bottom: 2px solid #ddd;">분류</th>
+            <th style="width:30%; padding: 8px; border-bottom: 2px solid #ddd; text-align: left;">상세업무</th>
+            <th style="width:20%; padding: 8px; border-bottom: 2px solid #ddd;">담당자</th>
+            <th style="width:40%; padding: 8px; border-bottom: 2px solid #ddd;">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="background-color: #e0f7fa; padding: 6px;">✨ 기획</td>
+            <td style="text-align: left; padding: 6px;">📄 기획</td>
+            <td>ALL</td>
+            <td>2025년 11월 12일 → 11월 14일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #e0f7fa; padding: 6px;">✨ 기획</td>
+            <td style="text-align: left; padding: 6px;">📄 프로토타입 설계</td>
+            <td>김범섭</td>
+            <td>2025년 11월 14일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #fff9c4; padding: 6px;">📊 데이터</td>
+            <td style="text-align: left; padding: 6px;">📄 데이터 조사</td>
+            <td>이상혁, 오흥재, 이인재</td>
+            <td>2025년 11월 18일 → 11월 19일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #fff9c4; padding: 6px;">📊 데이터</td>
+            <td style="text-align: left; padding: 6px;">📄 데이터 수집</td>
+            <td>이상혁</td>
+            <td>2025년 11월 16일 → 11월 18일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffccbc; padding: 6px;">🗄️ DB설계</td>
+            <td style="text-align: left; padding: 6px;">📄 DB 조사</td>
+            <td>ALL</td>
+            <td>2025년 11월 17일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffccbc; padding: 6px;">🗄️ DB설계</td>
+            <td style="text-align: left; padding: 6px;">📄 전처리 및 벡터DB 구축</td>
+            <td>김종민</td>
+            <td>2025년 11월 19일 → 11월 20일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffccbc; padding: 6px;">🗄️ DB설계</td>
+            <td style="text-align: left; padding: 6px;">📄 DB 구축 인프라 설정</td>
+            <td>김종민</td>
+            <td>2025년 11월 18일 → 11월 20일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #e1bee7; padding: 6px;">🗣️ RAG</td>
+            <td style="text-align: left; padding: 6px;">📄 RAG 파이프라인 구축</td>
+            <td>김종민, 이상혁</td>
+            <td>2025년 11월 20일 → 11월 23일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #f8bbd0; padding: 6px;">💻 설계</td>
+            <td style="text-align: left; padding: 6px;">📄 백엔드 기초 작업</td>
+            <td>김범섭</td>
+            <td>2025년 11월 20일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #f8bbd0; padding: 6px;">💻 설계</td>
+            <td style="text-align: left; padding: 6px;">📄 프론트엔드 기초 작업</td>
+            <td>김범섭</td>
+            <td>2025년 11월 20일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #f8bbd0; padding: 6px;">💻 설계</td>
+            <td style="text-align: left; padding: 6px;">📄 최종 설계안</td>
+            <td>김범섭</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffe0b2; padding: 6px;">🔨 개발</td>
+            <td style="text-align: left; padding: 6px;">📄 백엔드 개발</td>
+            <td>이인재</td>
+            <td>2025년 11월 21일 → 11월 24일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffe0b2; padding: 6px;">🔨 개발</td>
+            <td style="text-align: left; padding: 6px;">📄 프론트엔드 개발</td>
+            <td>김범섭</td>
+            <td>2025년 11월 21일 → 11월 24일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #b3e5fc; padding: 6px;">🧪 테스트</td>
+            <td style="text-align: left; padding: 6px;">📄 기능 테스트</td>
+            <td>ALL</td>
+            <td>2025년 11월 24일 → 11월 25일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #b3e5fc; padding: 6px;">🧪 테스트</td>
+            <td style="text-align: left; padding: 6px;">📄 프롬프트 최적화</td>
+            <td>김종민, 이상혁, 오흥재</td>
+            <td>2025년 11월 24일 → 11월 25일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #c8e6c9; padding: 6px;">📢 발표</td>
+            <td style="text-align: left; padding: 6px;">📄 README 작성</td>
+            <td>오흥재, 이상혁</td>
+            <td>2025년 11월 24일 → 11월 25일</td>
+        </tr>
+        <tr>
+            <td style="background-color: #c8e6c9; padding: 6px;">📢 발표</td>
+            <td style="text-align: left; padding: 6px;">📄 발표 준비</td>
+            <td>김범섭</td>
+            <td>2025년 11월 24일 → 11월 25일</td>
+        </tr>
+    </tbody>
+</table>
 
 ---
 
