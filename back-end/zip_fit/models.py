@@ -18,6 +18,7 @@ class SourceInfo(BaseModel):
     announcement_date: Optional[str] = None
     announcement_url: Optional[str] = None
     announcement_status: Optional[str] = None
+    matched_content: Optional[str] = Field(None, description="검색된 원문 텍스트 요약")
     region: str
     notice_type: str
     category: str

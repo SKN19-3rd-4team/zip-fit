@@ -31,8 +31,8 @@ async def rag_process(query: str, history: List[Dict], verbose: bool = True) -> 
         }
 
     # 4. 재순위화 (Reranking)
-    reranked = gongo.rerank_results(query_analysis.get('rewritten_question', query), search_results)
-
+    reranked = await gongo.rerank_results(query_analysis.get('rewritten_question', query), search_results)
+    
     # 5. 청크 병합
     merged_results = await gongo.merge_chunks(reranked)
 
@@ -140,7 +140,7 @@ async def chat_service(query: str, history: List[Dict]) -> Dict:
             combined = context_results + [r for r in general_results if r['chunk_id'] not in seen]
 
             # 재순위화
-            reranked = gongo.rerank_results(query_analysis.get('rewritten_question', query), combined)
+            reranked = await gongo.rerank_results(query_analysis.get('rewritten_question', query), combined)
 
             # 청크 병합
             merged_results = await gongo.merge_chunks(reranked)

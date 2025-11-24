@@ -143,31 +143,27 @@ async def multi_query_hybrid_search(
 
 
 # 4. 재순위화 (Reranking)
-def rerank_results(query: str, search_results: List[Dict], top_k: int = 8) -> List[Dict]:
+async def rerank_results(query: str, search_results: List[Dict], top_k: int = 8) -> List[Dict]:
     """
     Cross-Encoder를 사용하여 결과의 순위를 재조정합니다.
-    config.USE_RERANKER가 False면 단순 유사도 정렬을 수행합니다.
+    (Async Non-blocking 버전)
     """
     if not search_results:
         return []
     
-    reranker = get_reranker() # 스위치가 꺼져있으면 None 반환
+    reranker = get_reranker()
 
-    # Reranker OFF 또는 모델 로드 실패 시
     if reranker is None:
-        # 기존 similarity 점수(Vector 검색 결과) 기준으로 정렬
         sorted_results = sorted(search_results, key=lambda x: x.get('similarity', 0), reverse=True)
         return sorted_results[:top_k]
 
-    # Reranker ON
     try:
         pairs = [(query, r['chunk_text']) for r in search_results]
-        scores = reranker.predict(pairs)
+        scores = await asyncio.to_thread(reranker.predict, pairs)
         
         for i, result in enumerate(search_results):
             result['rerank_score'] = float(scores[i])
         
-        # Rerank 점수 기준 정렬
         reranked = sorted(search_results, key=lambda x: x['rerank_score'], reverse=True)
         return reranked[:top_k]
         
