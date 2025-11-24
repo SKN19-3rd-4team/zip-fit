@@ -119,7 +119,8 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 
 ## 5. WBS
 
-(팀 GitHub Project Kanban 보드 활용 예정)
+
+<img width="1102" height="991" alt="wbs" src="https://github.com/user-attachments/assets/3cf98fe2-d43f-469b-a657-c72ebf0b0bc7" />
 
 ---
 
