@@ -14,7 +14,6 @@
 
 **팀원**:
 
-| | 김범섭 | 김종민 | 이상혁 | 이인재 | 오흥재 |
 |---|---|---|---|---|---|
 | ![김범섭](https://github.com/WhatSupYap.png?size=100) | ![김종민](https://github.com/jongminkim-KR1.png?size=100) | ![이상혁](https://github.com/sangpiri.png?size=100) | ![이인재](https://github.com/distecter.png?size=100) | ![오흥재](https://github.com/vfxpedia.png?size=100) |
 | 김범섭 | 김종민 | 이상혁 | 이인재 | 오흥재 |
