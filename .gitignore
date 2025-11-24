@@ -36,5 +36,5 @@ pnpm-lock.yaml
 
 # model_cahce
 model_cache/
-
+docker_db/
 .vscode/
