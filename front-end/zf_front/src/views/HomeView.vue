@@ -2,7 +2,7 @@
 // 홈 뷰에 필요한 상태(data)나 메서드(methods)가 있다면 여기에 정의합니다.
 // 현재는 정적 페이지 구성이므로 비워둡니다.
 
-// 버튼 클릭 시 페이지 이동을 위해 Vue Router의 훅을 사용할 수 있습니다.
+import { ref, onMounted } from 'vue' // ref와 onMounted 훅 임포트
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -18,6 +18,48 @@ const viewNotices = () => {
   // /list 경로로 이동합니다.
   router.push('/list')
 }
+
+interface DashBoardInfo {  
+  CNT_ALL: number;
+  CNT_NOTE_ING: number;
+  CNT_APP_ING: number;
+  CNT_ELSE: number;
+}
+
+// API 결과를 저장할 반응형 변수. 초기값은 빈 객체 또는 기본값으로 설정
+const dashboardData = ref<DashBoardInfo>({
+  CNT_ALL: 0,
+  CNT_NOTE_ING: 0,
+  CNT_APP_ING: 0,
+  CNT_ELSE: 0,
+});
+
+const getDashBoard = async () => {
+  try {
+    const response = await fetch('http://127.0.0.1:8000/api/v1/stats', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP 오류! 상태 코드: ${response.status}`);
+    }
+
+    const return_value: DashBoardInfo = await response.json();
+    
+    // 💡 API 결과를 반응형 변수(.value)에 할당하여 View 업데이트
+    dashboardData.value = return_value;
+
+    console.log('대시보드 데이터 로드 성공:', dashboardData.value);
+
+  } catch (error) {
+    console.error('API 호출 오류:', error);
+  }
+}
+
+
 
 // 첨부된 HTML 파일에 있던 간단한 JavaScript 함수는 Vue 방식으로 처리하는 것이 좋습니다.
 // function toggleClassName(element, event) { ... } 와 같은 함수는 더 이상 필요 없습니다.
@@ -102,32 +144,32 @@ const viewNotices = () => {
           <div class="card outlined">
             <div class="icon-has-txt">
               <div class="txt">
-                <div class="tit">1,999</div>
-                <div class="desc">텍스트 정보</div>
+                <div class="tit">{{ dashboardData.CNT_ALL }}</div>
+                <div class="desc">전체 공고 수</div>
               </div>
             </div>
           </div>
           <div class="card outlined">
             <div class="icon-has-txt">
               <div class="txt">
-                <div class="tit">1,999</div>
-                <div class="desc">텍스트 정보</div>
+                <div class="tit">{{ dashboardData.CNT_NOTE_ING }}</div>
+                <div class="desc">접수 예정 공고</div>
               </div>
             </div>
           </div>
           <div class="card outlined">
             <div class="icon-has-txt">
               <div class="txt">
-                <div class="tit">1,999</div>
-                <div class="desc">텍스트 정보</div>
+                <div class="tit">{{ dashboardData.CNT_APP_ING }}</div>
+                <div class="desc">접수 중인 공고</div>
               </div>
             </div>
           </div>
           <div class="card outlined">
             <div class="icon-has-txt">
               <div class="txt">
-                <div class="tit">1,999</div>
-                <div class="desc">텍스트 정보</div>
+                <div class="tit">{{ dashboardData.CNT_ELSE }}</div>
+                <div class="desc">기타 공고</div>
               </div>
             </div>
           </div>
