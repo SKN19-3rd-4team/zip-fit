@@ -236,47 +236,187 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 
 ### 프로젝트 범위
 
-| 구분 | 프로토타입 (현재 구현) | 최종 목표 |
-|------|---------------------|----------|
-| **데이터** | LH 공고 중 서울/경기 지역만 | 전국 지역, GH/SH 공고 포함 |
-| **핵심 기능** | AI 상담 → 공고 비교/추천 → 신청 안내 | AI 상담 → 자격 진단 → 공고 비교/추천 → 신청 안내 → 계약 지원 → 대출 정보 제공 |
-| **제외 기능** | 자격 진단, 계약 지원, 대출 정보 제공 | - |
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<thead>
+<tr style="background-color: #f5f5f5; border-bottom: 2px solid #ddd;">
+<th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; width: 15%;">구분</th>
+<th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; width: 40%;">프로토타입 (현재 구현)</th>
+<th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">최종 목표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>데이터</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">LH 공고 중 서울/경기 지역만</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">전국 지역, GH/SH 공고 포함</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>핵심 기능</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">AI 상담 → 공고 비교/추천 → 신청 안내</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">AI 상담 → 자격 진단 → 공고 비교/추천 → 신청 안내 → 계약 지원 → 대출 정보 제공</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>제외 기능</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">자격 진단, 계약 지원, 대출 정보 제공</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">-</td>
+</tr>
+</tbody>
+</table>
 
 ### 기능 요구사항 요약
 
-| 기능 ID | 기능명 | 프로토타입 상태 | 우선순위 |
-|---------|--------|----------------|---------|
-| FR-001 | AI 상담 (대화형 인터페이스) | ✅ 구현 완료 | 높음 |
-| FR-002 | 질문 재구성 및 분석 | ✅ 구현 완료 | 높음 |
-| FR-003 | RAG 기반 문서 검색 | ✅ 구현 완료 | 높음 |
-| FR-004 | 공고 비교 및 추천 | ✅ 구현 완료 | 높음 |
-| FR-005 | 신청 안내 | ✅ 구현 완료 | 높음 |
-| FR-006 | 자격 진단 | ❌ 미구현 (향후 확장) | 중간 |
-| FR-007 | 계약 지원 | ❌ 미구현 (향후 확장) | 낮음 |
-| FR-008 | 대출 정보 제공 | ❌ 미구현 (향후 확장) | 중간 |
-| FR-009 | 용어 설명 (Glossary) | ✅ 구현 완료 | 중간 |
-| FR-010 | 세션 관리 | ✅ 구현 완료 | 높음 |
-| FR-011 | 공고 통계 대시보드 | ✅ 구현 완료 | 중간 |
-| FR-012 | 공고 목록 조회 | ⚠️ 구조만 구현 | 중간 |
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<thead>
+<tr style="background-color: #f5f5f5; border-bottom: 2px solid #ddd;">
+<th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; width: 10%;">기능 ID</th>
+<th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; width: 35%;">기능명</th>
+<th style="padding: 12px; text-align: center; border-bottom: 2px solid #ddd; width: 25%;">프로토타입 상태</th>
+<th style="padding: 12px; text-align: center; border-bottom: 2px solid #ddd; width: 15%;">우선순위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-001</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">AI 상담 (대화형 인터페이스)</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">✅ 구현 완료</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">높음</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-002</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">질문 재구성 및 분석</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">✅ 구현 완료</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">높음</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-003</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">RAG 기반 문서 검색</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">✅ 구현 완료</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">높음</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-004</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">공고 비교 및 추천</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">✅ 구현 완료</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">높음</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-005</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">신청 안내</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">✅ 구현 완료</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">높음</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-006</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">자격 진단</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">❌ 미구현 (향후 확장)</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">중간</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-007</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">계약 지원</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">❌ 미구현 (향후 확장)</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">낮음</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-008</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">대출 정보 제공</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">❌ 미구현 (향후 확장)</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">중간</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-009</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">용어 설명 (Glossary)</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">✅ 구현 완료</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">중간</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-010</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">세션 관리</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">✅ 구현 완료</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">높음</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-011</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">공고 통계 대시보드</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">✅ 구현 완료</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">중간</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">FR-012</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">공고 목록 조회</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">⚠️ 구조만 구현</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center;">중간</td>
+</tr>
+</tbody>
+</table>
 
 ### 비기능 요구사항 요약
 
-| 항목 | 요구사항 | 현재 상태 |
-|------|----------|----------|
-| **응답 시간** | 평균 3초 이내 | 측정 필요 |
-| **동시 접속자** | 최소 10명 동시 처리 | ✅ 지원 (비동기 처리) |
-| **확장성** | Stateless API 설계 | ✅ 지원 |
-| **보안** | 입력 검증, CORS 설정, API 키 관리 | ✅ 구현 완료 |
-| **호환성** | 최신 브라우저 지원, Python 3.12, Node.js ^20.19.0 | ✅ 지원 |
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<thead>
+<tr style="background-color: #f5f5f5; border-bottom: 2px solid #ddd;">
+<th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; width: 20%;">항목</th>
+<th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; width: 50%;">요구사항</th>
+<th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; width: 30%;">현재 상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>응답 시간</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">평균 3초 이내</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">측정 필요</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>동시 접속자</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">최소 10명 동시 처리</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">✅ 지원 (비동기 처리)</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>확장성</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">Stateless API 설계</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">✅ 지원</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>보안</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">입력 검증, CORS 설정, API 키 관리</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">✅ 구현 완료</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>호환성</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">최신 브라우저 지원, Python 3.12, Node.js ^20.19.0</td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">✅ 지원</td>
+</tr>
+</tbody>
+</table>
 
 ### 주요 제약사항
 
-| 제약사항 | 설명 |
-|----------|------|
-| **데이터 범위** | 프로토타입은 LH 서울/경기 지역만 대상 |
-| **LLM API 비용** | OpenAI API 사용으로 인한 비용 발생 |
-| **세션 저장** | 인메모리 저장으로 서버 재시작 시 데이터 손실 가능 |
-| **공고 업데이트** | 수동 크롤링으로 실시간 업데이트 어려움 |
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<thead>
+<tr style="background-color: #f5f5f5; border-bottom: 2px solid #ddd;">
+<th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd; width: 25%;">제약사항</th>
+<th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>데이터 범위</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">프로토타입은 LH 서울/경기 지역만 대상</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>LLM API 비용</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">OpenAI API 사용으로 인한 비용 발생</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>세션 저장</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">인메모리 저장으로 서버 재시작 시 데이터 손실 가능</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>공고 업데이트</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #eee;">수동 크롤링으로 실시간 업데이트 어려움</td>
+</tr>
+</tbody>
+</table>
 
 ### 향후 확장 계획
 
