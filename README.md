@@ -83,8 +83,8 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 | | 상태 관리 | <img src="https://img.shields.io/badge/Pinia-FFDC3D?style=for-the-badge&logo=pinia&logoColor=black"/> | 3.0.3 | 상태 관리 |
 | | 라우팅 | <img src="https://img.shields.io/badge/Vue_Router-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white"/> | 4.6.3 | 라우팅 |
 | | 런타임 | <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/> | ^20.19.0+ | 런타임 환경 |
-| **데이터베이스** | RDB | <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | - | 관계형 데이터베이스 |
-| | 벡터 확장 | <img src="https://img.shields.io/badge/pgvector-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | - | 벡터 확장 |
+| **데이터베이스** | RDB | <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | 14.20 | 관계형 데이터베이스 |
+| | 벡터 확장 | <img src="https://img.shields.io/badge/pgvector-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | 0.8.1 | 벡터 확장 |
 | | DB 연결 | <img src="https://img.shields.io/badge/asyncpg-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | 0.30.0 | 비동기 DB 연결 라이브러리 |
 | **AI 모델** | 임베딩 | <img src="https://img.shields.io/badge/BAAI%2Fbge--m3-010101?style=for-the-badge&logo=huggingface&logoColor=white"/> | - | 문서 및 질문 임베딩 생성 (1024차원) |
 | | 임베딩 라이브러리 | <img src="https://img.shields.io/badge/Sentence--Transformers-FF6347?style=for-the-badge&logo=pytorch&logoColor=white"/> | 3.3.1 | 임베딩 모델 라이브러리 |
