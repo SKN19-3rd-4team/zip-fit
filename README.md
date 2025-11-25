@@ -92,13 +92,13 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 | | LLM | <img src="https://img.shields.io/badge/GPT--4o--mini-000000?style=for-the-badge&logo=openai&logoColor=white"/> | OpenAI | 질문 재구성, 답변 생성, 맥락 분석 |
 | **데이터 처리** | PDF 추출 | <img src="https://img.shields.io/badge/PyMuPDF4LLM-B31B1B?style=for-the-badge&logo=pdf&logoColor=white"/> | 0.0.17 | PDF 텍스트 추출 |
 | | 청킹 | <img src="https://img.shields.io/badge/Langchain--Splitter-181818?style=for-the-badge&logo=langchain&logoColor=white"/> | 0.3.2 | 텍스트 청킹 |
-| | HTTP | <img src="https://img.shields.io/badge/requests-010101?style=for-the-badge&logo=html5&logoColor=white"/> | - | HTTP 요청 |
+| | HTTP | <img src="https://img.shields.io/badge/requests-010101?style=for-the-badge&logo=html5&logoColor=white"/> | 2.32.5 | HTTP 요청 |
 | | 파싱 | <img src="https://img.shields.io/badge/BeautifulSoup4-010101?style=for-the-badge&logo=html5&logoColor=white"/> | 4.14.2 | HTML 파싱 |
 | | 데이터 분석 | <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/> | 2.2.3 | 데이터 분석 및 처리 |
 | | 딥러닝 | <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/> | >=2.6.0 | 딥러닝 프레임워크 |
 | | 수치 연산 | <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/> | >=1.24.0 | 수치 연산 라이브러리 |
 | **개발 환경** | 컨테이너 | <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/> | 4.41.0.210443 | 컨테이너화 및 배포 |
-| | 패키지 관리 | <img src="https://img.shields.io/badge/Pip%2FConda-010101?style=for-the-badge&logo=anaconda&logoColor=white"/> | 2.32.5 | 패키지 관리 |
+| | 패키지 관리 | <img src="https://img.shields.io/badge/Pip%2FConda-010101?style=for-the-badge&logo=anaconda&logoColor=white"/> | - | 패키지 관리 |
 | | 환경 변수 | <img src="https://img.shields.io/badge/python--dotenv-3776AB?style=for-the-badge&logo=python&logoColor=white"/> | 1.0.1 | 환경 변수 관리 |
 
 ---
