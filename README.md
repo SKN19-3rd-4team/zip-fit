@@ -723,7 +723,12 @@ POST /api/v1/chat
 
 ---
 
-## 11. 수행 결과 (테스트/시연 페이지)
+## 11. 수행 결과
+
+<img src="https://github.com/user-attachments/assets/d20f984c-50ca-4d69-95a6-dd345690f931" width="1200" />
+
+
+
 
 ### 주요 기능 시연
 
