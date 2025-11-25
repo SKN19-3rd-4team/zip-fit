@@ -726,50 +726,11 @@ POST /api/v1/chat
 
 ## 11. 수행 결과
 
+**시연 예시**
+
 <img src="https://github.com/user-attachments/assets/d20f984c-50ca-4d69-95a6-dd345690f931" width="1200" />
 
-
-
-
-### 주요 기능 시연
-
-#### 맥락 기반 대화 흐름 예시
-
-ZIPFIT의 핵심 기능인 **맥락 기반 대화(Context-Aware Conversation)**를 통해 사용자는 자연스럽게 이어지는 질문으로 공고 정보를 탐색할 수 있습니다.
-
-**사용자 질문 1**: "수원시에 신혼부부에게 적절한 공고 알려줘"
-
-
-**AI 응답**:
-
-<img width="2838" height="1430" alt="Image" src="https://github.com/user-attachments/assets/fbc18421-9483-4ac7-830d-ed70d924dcc7" />
-
-
-
----
-
-**사용자 질문 2**: "그 공고 신청일정 알려줘" *(이전 대화의 첫 번째 공고를 참조)*
-
-
-**AI 응답**:
-
-<img width="2832" height="1412" alt="Image" src="https://github.com/user-attachments/assets/e5a2f9db-6677-4dd2-9560-bede7ad98973" />
-
-
----
-
-**사용자 질문 3**: "신청서류는 뭐를 준비해야해?" *(이전 대화의 공고를 계속 참조)*
-
-**AI 응답**:
-
-
-<img width="2840" height="1412" alt="Image" src="https://github.com/user-attachments/assets/149432d2-37a4-4119-a8d7-566e5ebd5641" />
-
-<img width="2836" height="1404" alt="Image" src="https://github.com/user-attachments/assets/a4797609-ab9e-43bf-9200-435df30db37f" />
-
----
-
-**핵심 기능 설명**:
+**핵심 기능 설명**
 1. **맥락 인식**: "그 공고", "거기" 등의 지시어를 이해하고 이전 대화에서 언급된 공고를 자동으로 참조
 2. **자연스러운 대화 흐름**: 사용자가 매번 공고명을 명시하지 않아도 대화가 이어짐
 3. **정확한 정보 제공**: RAG 파이프라인을 통해 공고문의 정확한 내용을 기반으로 답변 생성
