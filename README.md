@@ -73,7 +73,7 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 | :---: | :---: | :--- | :--- | :--- |
 | **Backend** | API | <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/> | 0.121.3 | RESTful API 프레임워크 |
 | | 언어 | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/> | 3.12 | 백엔드 개발 언어 |
-| | 비동기 | <img src="https://img.shields.io/badge/Asyncio-007ACC?style=for-the-badge&logo=asyncapi&logoColor=white"/> | - | 비동기 처리 |
+| | 비동기 | <img src="https://img.shields.io/badge/Asyncio-007ACC?style=for-the-badge&logo=asyncapi&logoColor=white"/> | 4.11.0 | 비동기 처리 |
 | | DB 연결 | <img src="https://img.shields.io/badge/asyncpg-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | 0.30.0 | PostgreSQL 비동기 연결 |
 | | LLM 클라이언트 | <img src="https://img.shields.io/badge/OpenAI_SDK-412991?style=for-the-badge&logo=openai&logoColor=white"/> | 1.57.2 | OpenAI API 클라이언트 |
 | | 서버 | <img src="https://img.shields.io/badge/Uvicorn-010101?style=for-the-badge&logo=uvicorn&logoColor=white"/> | 0.38.0 | ASGI 서버 |
@@ -83,8 +83,8 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 | | 상태 관리 | <img src="https://img.shields.io/badge/Pinia-FFDC3D?style=for-the-badge&logo=pinia&logoColor=black"/> | 3.0.3 | 상태 관리 |
 | | 라우팅 | <img src="https://img.shields.io/badge/Vue_Router-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white"/> | 4.6.3 | 라우팅 |
 | | 런타임 | <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/> | ^20.19.0+ | 런타임 환경 |
-| **데이터베이스** | RDB | <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | - | 관계형 데이터베이스 |
-| | 벡터 확장 | <img src="https://img.shields.io/badge/pgvector-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | - | 벡터 확장 |
+| **데이터베이스** | RDB | <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | 14.20 | 관계형 데이터베이스 |
+| | 벡터 확장 | <img src="https://img.shields.io/badge/pgvector-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | 0.4.1 | 벡터 확장 |
 | | DB 연결 | <img src="https://img.shields.io/badge/asyncpg-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/> | 0.30.0 | 비동기 DB 연결 라이브러리 |
 | **AI 모델** | 임베딩 | <img src="https://img.shields.io/badge/BAAI%2Fbge--m3-010101?style=for-the-badge&logo=huggingface&logoColor=white"/> | - | 문서 및 질문 임베딩 생성 (1024차원) |
 | | 임베딩 라이브러리 | <img src="https://img.shields.io/badge/Sentence--Transformers-FF6347?style=for-the-badge&logo=pytorch&logoColor=white"/> | 3.3.1 | 임베딩 모델 라이브러리 |
@@ -93,11 +93,11 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 | **데이터 처리** | PDF 추출 | <img src="https://img.shields.io/badge/PyMuPDF4LLM-B31B1B?style=for-the-badge&logo=pdf&logoColor=white"/> | 0.0.17 | PDF 텍스트 추출 |
 | | 청킹 | <img src="https://img.shields.io/badge/Langchain--Splitter-181818?style=for-the-badge&logo=langchain&logoColor=white"/> | 0.3.2 | 텍스트 청킹 |
 | | HTTP | <img src="https://img.shields.io/badge/requests-010101?style=for-the-badge&logo=html5&logoColor=white"/> | - | HTTP 요청 |
-| | 파싱 | <img src="https://img.shields.io/badge/BeautifulSoup4-010101?style=for-the-badge&logo=html5&logoColor=white"/> | - | HTML 파싱 |
+| | 파싱 | <img src="https://img.shields.io/badge/BeautifulSoup4-010101?style=for-the-badge&logo=html5&logoColor=white"/> | 4.14.2 | HTML 파싱 |
 | | 데이터 분석 | <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/> | 2.2.3 | 데이터 분석 및 처리 |
 | | 딥러닝 | <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/> | >=2.6.0 | 딥러닝 프레임워크 |
 | | 수치 연산 | <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/> | >=1.24.0 | 수치 연산 라이브러리 |
-| **개발 환경** | 컨테이너 | <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/> | - | 컨테이너화 및 배포 |
+| **개발 환경** | 컨테이너 | <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/> | 4.41.0.210443 | 컨테이너화 및 배포 |
 | | 패키지 관리 | <img src="https://img.shields.io/badge/Pip%2FConda-010101?style=for-the-badge&logo=anaconda&logoColor=white"/> | - | 패키지 관리 |
 | | 환경 변수 | <img src="https://img.shields.io/badge/python--dotenv-3776AB?style=for-the-badge&logo=python&logoColor=white"/> | 1.0.1 | 환경 변수 관리 |
 
@@ -522,14 +522,29 @@ POST /api/v1/chat
 
 ## 10. 진행 과정 중 프로그램 개선 노력
 
-### 개선 사항
-(추후 작성 예정)
+본 프로젝트에서는 기본 RAG 시스템의 한계를 극복하기 위해 다양한 고급 RAG 기법을 단계적으로 도입하고 개선했습니다.
 
-### 기술적 도전과 해결
-(추후 작성 예정)
+자세한 내용은 [진행 과정 중 프로그램 개선 노력 문서](./docs/07_진행_과정_중_프로그램_개선_노력.md)를 참조하세요.
 
-### 성능 최적화
-(추후 작성 예정)
+### RAG 파이프라인 단계별 문제점 및 해결 방안
+
+```
+[사용자 질문]
+    ↓
+[1. 컨텍스트 분석] → 이전 대화 참조 여부 판단
+    ↓
+[2. 질문 재구성] → 검색 최적화된 형태로 변환
+    ↓
+[3. 멀티쿼리 생성] → 다양한 표현으로 변환
+    ↓
+[4. 하이브리드 검색] → 벡터 검색 + 키워드 검색
+    ↓
+[5. 재순위화 (Reranking)] → 관련도 기준 재정렬
+    ↓
+[6. 청크 병합] → 동일 공고의 청크 통합
+    ↓
+[7. 답변 생성] → LLM 기반 답변 생성
+```
 
 ---
 
@@ -719,3 +734,4 @@ zip-fit-main/
 - [개발된 소프트웨어](./docs/04_개발된_소프트웨어.md)
 - [DB 연동 구현 코드](./docs/05_DB_연동_구현_코드.md)
 - [테스트 계획 및 결과 보고서](./docs/06_테스트_계획_및_결과_보고서.md)
+- [진행 과정 중 프로그램 개선 노력](./docs/07_진행_과정_중_프로그램_개선_노력.md)
