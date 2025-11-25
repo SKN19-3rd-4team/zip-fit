@@ -9,14 +9,16 @@
 
   // 'AI' 상담 시작하기 버튼 클릭 핸들러
   const startAiConsult = () => {
+    console.log('AI 상담 버튼 클릭됨');
     // /ai 경로로 이동합니다.
-    router.push('/ai')
+    router.push('/ai');
   }
 
   // 공고 둘러보기 버튼 클릭 핸들러
   const viewNotices = () => {
+    console.log('공고 둘러보기 버튼 클릭됨');
     // /list 경로로 이동합니다.
-    router.push('/list')
+    router.push('/list');
   }
 
   interface DashBoardInfo {  
@@ -105,9 +107,9 @@ onMounted(() => {
               <button class="ui-btn fill primary" @click="startAiConsult">
                 <strong class="b">'AI'</strong> 상담 시작하기
               </button>
-              <button class="ui-btn outlined" @click="viewNotices">
+              <!-- <button class="ui-btn outlined" @click="viewNotices">
                 공고 둘러보기
-              </button>
+              </button> -->
             </div>
           </div>
 
@@ -186,4 +188,22 @@ onMounted(() => {
 <style scoped>
 /* HomeView.vue에만 적용될 스타일이 있다면 여기에 작성합니다. */
 /* 현재는 원본 HTML에 연결된 style.css 파일을 전역적으로 사용한다고 가정합니다. */
+
+/* 버튼 클릭 가능하도록 z-index 및 pointer-events 설정 */
+.card {
+  pointer-events: auto !important;
+}
+
+.btns {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto !important;
+}
+
+.ui-btn {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
 </style>
