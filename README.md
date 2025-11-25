@@ -20,7 +20,8 @@
 | <img src="https://github.com/user-attachments/assets/4fef2723-f298-406e-8e18-dfe06c61c174" width="200" height="200" /> | <img src="https://github.com/user-attachments/assets/f58d5e52-fa84-4745-affd-472ac458912b" width="200" height="200" /> | <img src="https://github.com/user-attachments/assets/86647741-f153-49da-89c2-d2922872665d" width="200" height="200" /> | <img src="https://github.com/user-attachments/assets/b7972497-13b2-458a-a013-4c9568428645" width="200" height="200" /> | <img src="https://github.com/user-attachments/assets/b3c747f8-4497-4136-bc4a-426c2b16c808" width="200" height="200" /> |
 |---|---|---|---|---|
 | 김범섭 | 김종민 | 오흥재 | 이상혁 | 이인재 |
-| [@WhatSupYap](https://github.com/WhatSupYap) | [@jongminkim-KR1](https://github.com/jongminkim-KR1) | [@vfxpedia](https://github.com/vfxpedia) | [@sangpiri](https://github.com/sangpiri) | [@distecter](https://github.com/distecter) |
+| [![GitHub](https://img.shields.io/badge/GitHub-WhatSupYap-blue?logo=github)](https://github.com/WhatSupYap) | [![GitHub](https://img.shields.io/badge/GitHub-jongminkim--KR1-blue?logo=github)](https://github.com/jongminkim-KR1) | [![GitHub](https://img.shields.io/badge/GitHub-vfxpedia-blue?logo=github)](https://github.com/vfxpedia) | [![GitHub](https://img.shields.io/badge/GitHub-sangpiri-blue?logo=github)](https://github.com/sangpiri) | [![GitHub](https://img.shields.io/badge/GitHub-distecter-blue?logo=github)](https://github.com/distecter) |
+
 
 ---
 
