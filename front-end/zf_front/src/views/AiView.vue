@@ -54,6 +54,8 @@
     const userInput = ref('');
     const isLoading = ref(false);
     const messageContainer = ref<HTMLElement | null>(null);
+    const showHeader = ref(true);
+    const isFirstMessage = ref(true);
 
     // 현재 시간 가져오기
     function getCurrentTime(): string {
@@ -87,6 +89,12 @@
     // 메시지 전송
     async function sendMessage() {
         if (!userInput.value.trim() || isLoading.value) return;
+
+        // 첫 메시지 전송 시 헤더 숨김
+        if (isFirstMessage.value) {
+            showHeader.value = false;
+            isFirstMessage.value = false;
+        }
 
         const query = userInput.value.trim();
         userInput.value = '';
@@ -197,15 +205,15 @@
             sendMessage();
         }
     }
-    
+
     // 💡 컴포넌트가 마운트된 후 데이터 로드 함수 호출
     onMounted(() => {
         guid2 = generateGuidLib()
     });
 </script>
-
+    
 <template>
-    <header class="com-header-wrap">
+    <header class="com-header-wrap" :class="{ 'fade-out': !showHeader }">
         <div class="ui-breadcrumb">
             <ul class="location">
                 <li>
@@ -293,5 +301,23 @@
     .layer-input .input .ui-btn {
         padding: 0.5rem;  /* 8px로 줄임 (원래 16px) */
         min-width: 3rem;
+    }
+
+    /* 헤더 슬라이드업 효과 */
+    .com-header-wrap {
+        transition: all 0.3s ease-out;
+        transform: translateY(0);
+        opacity: 1;
+        max-height: 200px;
+        overflow: hidden;
+    }
+
+    .com-header-wrap.fade-out {
+        transform: translateY(-100%);
+        opacity: 0;
+        max-height: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 </style>

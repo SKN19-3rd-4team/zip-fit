@@ -1882,7 +1882,7 @@ body {
   justify-content: initial;
   align-items: initial;
   flex-direction: column;
-  gap: 1.5rem;
+  /* gap: 1.5rem; */
   height: 100%;
 }
 
@@ -1892,7 +1892,7 @@ body {
 
 .layer-msg {
   height: 100%;
-  margin: 0.7rem;
+  margin: 0.4rem;
   background-color: var(--gray200);
   border: 0.0625rem solid var(--gray200);
   border-radius: 1rem;
