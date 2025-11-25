@@ -239,7 +239,7 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 
 자세한 내용은 [요구사항 명세서 문서](./docs/08_요구사항_명세서.md)를 참조하세요.
 
-### 프로젝트 범위
+### (1) 프로젝트 범위
 
 <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
 <thead>
@@ -268,7 +268,7 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 </tbody>
 </table>
 
-### 기능 요구사항 요약
+### (2) 기능 요구사항 요약
 
 <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
 <thead>
@@ -355,7 +355,7 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 </tbody>
 </table>
 
-### 비기능 요구사항 요약
+### (3) 비기능 요구사항 요약
 
 <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
 <thead>
@@ -394,7 +394,7 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 </tbody>
 </table>
 
-### 주요 제약사항
+### (4) 주요 제약사항
 
 <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
 <thead>
@@ -423,7 +423,7 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 </tbody>
 </table>
 
-### 향후 확장 계획
+### (5) 향후 확장 계획
 
 - **Phase 2**: 자격 진단, GH/SH 공고 통합, 공고 목록 완성
 - **Phase 3**: 대출 정보 제공, 계약 지원, 알림 기능
