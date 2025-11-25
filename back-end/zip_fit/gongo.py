@@ -153,7 +153,6 @@ async def multi_query_hybrid_search(
 async def rerank_results(query: str, search_results: List[Dict], top_k: int = 25) -> List[Dict]:
     """
     Cross-Encoder를 사용하여 결과의 순위를 재조정합니다.
-    (Async Non-blocking 버전)
     """
     if not search_results:
         return []
@@ -228,7 +227,6 @@ def build_context(merged_results: List[Dict]) -> str:
         category_name = "임대" if result['category'] == 'lease' else "분양"
         url = result.get('announcement_url', '')
 
-        # status 정보도 LLM 프롬프트에 포함
         context_parts.append(f"""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 문서 {i}: {result['announcement_title']}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

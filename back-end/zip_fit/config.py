@@ -21,7 +21,7 @@ DATABASE = os.getenv('DB_DATABASE')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 GOV_API_KEY = os.getenv('GOV_API_KEY')
 
-# (호환성용) DB 연결 딕셔너리
+# DB 연결 딕셔너리
 DB_CONFIG = {
     'host': HOST,
     'port': PORT,

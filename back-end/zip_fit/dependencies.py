@@ -30,9 +30,8 @@ def load_models():
     
     print(f"\n[System] 모델 저장소 경로: {base_path}")
     
-    # -----------------------------------------------------
+
     # 1. 임베딩 모델 로드 (자동 다운로드 포함)
-    # -----------------------------------------------------
     if _embedding_model is None:
         print(f"[System] 임베딩 모델 확인 중... ({config.EMBEDDING_MODEL_NAME})")
         try:
@@ -47,9 +46,8 @@ def load_models():
             print(f"[Critical] 임베딩 모델 로딩 실패: {e}")
             raise e
 
-    # -----------------------------------------------------
+
     # 2. Reranker 모델 로드
-    # -----------------------------------------------------
     if config.USE_RERANKER:
         if _reranker_model is None:
             rerank_model_name = config.RERANKER_MODEL_NAME
@@ -58,7 +56,7 @@ def load_models():
             
             print(f"[System] 2Reranker 모델 확인 중... ({rerank_model_name})")
             
-            # [핵심 로직] 폴더가 비어있거나 없으면 -> 강제 다운로드 실행
+            # 폴더가 비어있거나 없으면 -> 강제 다운로드 실행
             if not os.path.exists(local_rerank_path) or not os.listdir(local_rerank_path):
                 print(f"[System] 모델 파일이 없습니다. 다운로드를 시작합니다... (대상: {local_rerank_path})")
                 try:

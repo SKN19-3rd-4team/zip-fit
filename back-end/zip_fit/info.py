@@ -8,7 +8,7 @@ import gongo
 # 라우터 객체 생성
 router = APIRouter()
 
-# [핵심] 공유 세션 저장소
+# 공유 세션 저장소
 # router.py에서 'from info import user_sessions'로 가져가서 사용합니다.
 user_sessions: Dict[str, List[Dict]] = {}
 
@@ -46,7 +46,7 @@ async def get_dashboard_stats():
     finally:
         await conn.close()
 
-# 2. [신규] 메모리 세션 상태 확인 API (프론트엔드 연결 테스트용)
+# 2. 메모리 세션 상태 확인 API (프론트엔드 연결 테스트용)
 @router.get("/sessions")
 async def get_active_sessions():
     """
@@ -59,7 +59,7 @@ async def get_active_sessions():
         "full_data": user_sessions
     }
 
-# 3. [신규] DB 대화 로그 조회 API (백엔드 로직 검증용)
+# 3. DB 대화 로그 조회 API (백엔드 로직 검증용)
 @router.get("/logs")
 async def get_chat_logs(limit: int = 20):
     """
