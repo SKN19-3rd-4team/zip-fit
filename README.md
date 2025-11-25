@@ -18,10 +18,9 @@
 **팀원**:
 
 | <img src="https://github.com/user-attachments/assets/4fef2723-f298-406e-8e18-dfe06c61c174" width="200" height="200" /> | <img src="https://github.com/user-attachments/assets/f58d5e52-fa84-4745-affd-472ac458912b" width="200" height="200" /> | <img src="https://github.com/user-attachments/assets/86647741-f153-49da-89c2-d2922872665d" width="200" height="200" /> | <img src="https://github.com/user-attachments/assets/b7972497-13b2-458a-a013-4c9568428645" width="200" height="200" /> | <img src="https://github.com/user-attachments/assets/b3c747f8-4497-4136-bc4a-426c2b16c808" width="200" height="200" /> |
-|---|---|---|---|---|
-| 김범섭 | 김종민 | 오흥재 | 이상혁 | 이인재 |
+|:---:|:---:|:---:|:---:|:---:|
+| **김범섭** | **김종민** | **오홍재** | **이상혁** | **이인재** |
 | [![GitHub](https://img.shields.io/badge/GitHub-WhatSupYap-blue?logo=github)](https://github.com/WhatSupYap) | [![GitHub](https://img.shields.io/badge/GitHub-jongminkim--KR1-blue?logo=github)](https://github.com/jongminkim-KR1) | [![GitHub](https://img.shields.io/badge/GitHub-vfxpedia-blue?logo=github)](https://github.com/vfxpedia) | [![GitHub](https://img.shields.io/badge/GitHub-sangpiri-blue?logo=github)](https://github.com/sangpiri) | [![GitHub](https://img.shields.io/badge/GitHub-distecter-blue?logo=github)](https://github.com/distecter) |
-
 
 ---
 
@@ -101,7 +100,6 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 | **개발 환경** | 컨테이너 | <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/> | 4.41.0.210443 | 컨테이너화 및 배포 |
 | | 패키지 관리 | <img src="https://img.shields.io/badge/Pip%2FConda-010101?style=for-the-badge&logo=anaconda&logoColor=white"/> | - | 패키지 관리 |
 | | 환경 변수 | <img src="https://img.shields.io/badge/python--dotenv-3776AB?style=for-the-badge&logo=python&logoColor=white"/> | 1.0.1 | 환경 변수 관리 |
-
 ---
 
 ## 4. 시스템 아키텍처
@@ -109,7 +107,6 @@ ZIPFIT은 LH(한국토지주택공사), SH(서울주택도시공사), GH(경기�
 자세한 내용은 [시스템 아키텍처 문서](./docs/03_시스템_아키텍처.md)를 참조하세요.
 
 ![SKN_3차_ZIPFIT - 시스템 아키텍쳐](https://github.com/user-attachments/assets/91d8e81f-7320-4d7e-87f7-4fd3dcfe049a)
-
 ---
 
 ## 5. WBS
