@@ -112,6 +112,10 @@
 
         // 로딩 상태 시작
         isLoading.value = true;
+        
+        // 로딩 인디케이터가 나타난 후 스크롤
+        await nextTick();
+        scrollToBottom();
 
         try {
             // console.log(guid2);

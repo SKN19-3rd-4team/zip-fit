@@ -1,7 +1,0 @@
-announcement_title: string,
-announcement_date: string,
-announcement_url: string,
-announcement_status: string,
-region: string,
-notice_type: string,
-category: string,
